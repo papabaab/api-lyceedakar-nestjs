@@ -4,6 +4,9 @@ import { StudentEntity } from "src/students/graphql/student.entity";
 @ObjectType()
 export class CourseEntity {
 
+    // @Field(() => String, { nullable: true })
+    // id?: string
+    
     @Field(() => String, { nullable: true })
     courseId?: string
 

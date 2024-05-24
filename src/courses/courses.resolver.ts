@@ -5,16 +5,17 @@ import { CourseEntity } from "./graphql/course.entity";
 import { StudentEntity } from "src/students/graphql/student.entity";
 import { StudentsService } from "src/students/students.service";
 import { StudentDto } from "src/students/dto/student.dto";
+import { CourseInput } from "./graphql/course.input";
 
 
 
 @Resolver(() => CourseEntity)
-export class CoursesResolver extends BaseResolver(CourseEntity) {
+export class CoursesResolver extends BaseResolver(CourseEntity, CourseInput) {
     constructor(courseService: CoursesService, private studentService: StudentsService) {
         super(courseService)
     }
 
-    @ResolveField('students',() => [StudentEntity], { name: `students` })
+    @ResolveField('students',() => [StudentEntity], { name: `students`, nullable: 'itemsAndList'})
     async findAllStudents(@Parent() course: CourseEntity): Promise<StudentDto[]> {
         console.log("COURSES RESOLVER: findAllStudents: ", course)
         const result = await this.studentService.findStudentsOfCourse(course.courseId)

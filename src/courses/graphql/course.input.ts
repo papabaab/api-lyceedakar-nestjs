@@ -2,10 +2,11 @@ import { Field, InputType, } from "@nestjs/graphql";
 
 @InputType()
 export class CourseInput {
-    @Field({ nullable: false })
-    startDate?: string | Date
 
-    @Field({ nullable: false })
+    @Field(() => String, { nullable: true })
+    startDate: string | Date
+
+    @Field(() => String, { nullable: true })
     endDate: string | Date
 
     @Field(() => String, { nullable: true })

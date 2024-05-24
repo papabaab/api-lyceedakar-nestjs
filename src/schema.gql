@@ -18,12 +18,37 @@ type CourseEntity {
   courseTitle: String
   professor: String
   description: String
-  students: [StudentEntity!]!
+  students: [StudentEntity]
 }
 
 type Query {
-  findAllCourseEntity: [CourseEntity!]!
-  findOneCourseEntity(id: String!): CourseEntity!
-  findAllStudentEntity: [StudentEntity!]!
-  findOneStudentEntity(id: String!): StudentEntity!
+  findAllCourse: [CourseEntity!]!
+  findOneCourse(id: String!): CourseEntity!
+  findAllStudent: [StudentEntity!]!
+  findOneStudent(id: String!): StudentEntity!
+}
+
+type Mutation {
+  createCourse(data: CourseInput!): CourseEntity!
+  updateCourse(id: String!, data: CourseInput!): CourseEntity!
+  deleteCourse(id: String!): CourseEntity!
+  createStudent(data: StudentInput!): StudentEntity!
+  updateStudent(id: String!, data: StudentInput!): StudentEntity!
+  deleteStudent(id: String!): StudentEntity!
+}
+
+input CourseInput {
+  startDate: String
+  endDate: String
+  courseTitle: String
+  professor: String
+  description: String
+}
+
+input StudentInput {
+  firstname: String
+  lastname: String
+  username: String
+  email: String
+  courseId: String
 }
