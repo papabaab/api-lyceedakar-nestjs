@@ -1,11 +1,8 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose"
-import { Schema as MongooseSchema } from "mongoose"
-
-@Schema({collection: 'course', timestamps: true})
+@Schema({collection: 'course', timestamps: true, toJSON: {virtuals: true}})
 export class CourseDto {
 
-    @Prop({type: MongooseSchema.Types.ObjectId})
-    courseId?:  MongooseSchema.Types.ObjectId | string
+    courseId?: string
 
     @Prop({type: String, required: true})
     startDate!: string | Date
@@ -23,4 +20,6 @@ export class CourseDto {
     description!: string
 }
 
-export const CourseSchema = SchemaFactory.createForClass(CourseDto)
+ const CourseSchema = SchemaFactory.createForClass(CourseDto)
+ CourseSchema.virtual('courseId').get(function(){return this._id.toHexString()})
+export {CourseSchema}
