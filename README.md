@@ -4,7 +4,10 @@
 </div>
 
 ## TECHONOLOGIES UTILISÉES
-<img height = "100" alt = "MongoDb" src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.7DfPlLIngzN5xxUvcc4tUgHaCO%26pid%3DApi&f=1&ipt=6cfdd6ab0738d230423420b3fe423e52a937752c5fd51c21b8ca8be4f9381b7e&ipo=images"> <img height = "100" alt = "Typescript" src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.8qyBBxhvUiHHggSAU090uwHaDw%26pid%3DApi&f=1&ipt=c3f67a33583f84b97cec1d5b1b531a5a7209a587fb8237e614219eb4813e9d93&ipo=images"> <img height = "100" alt = "Nest.js" src="https://nestjs.com/img/logo-small.svg">
+<img height = "100" alt = "MongoDb" src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.7DfPlLIngzN5xxUvcc4tUgHaCO%26pid%3DApi&f=1&ipt=6cfdd6ab0738d230423420b3fe423e52a937752c5fd51c21b8ca8be4f9381b7e&ipo=images"> <img height = "100" alt = "Typescript" src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.8qyBBxhvUiHHggSAU090uwHaDw%26pid%3DApi&f=1&ipt=c3f67a33583f84b97cec1d5b1b531a5a7209a587fb8237e614219eb4813e9d93&ipo=images"> 
+
+<img height = "100" alt = "Nest.js" src="https://nestjs.com/img/logo-small.svg">
+<img height = "100" alt = "GraphQL" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.ZxDw0j3ANBxpatoCdNW8JQHaEK%26pid%3DApi&f=1&ipt=ede1b909603eb1e90ccf853763776070a72569cf9d0bdbf8d319f50c4e6cb08d&ipo=images">
 
 
 ## DESCRIPTION
