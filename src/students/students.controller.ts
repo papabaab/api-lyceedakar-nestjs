@@ -26,7 +26,8 @@ export class StudentsController {
     }
 
     @Post('')
-    async createStudent(@Body() student: StudentDto) {
+    async createStudent(@Body() student: StudentDto, @Param('courseId') courseId: string) {
+        if(!student.courseId) student.courseId = courseId
         return await this.studentsService.create(student)
     }
 

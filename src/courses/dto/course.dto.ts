@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose"
-@Schema({collection: 'course', timestamps: true, toJSON: {virtuals: true}})
+import { StudentDto } from "src/students/dto/student.dto"
+@Schema({collection: 'course', timestamps: true, toJSON: {virtuals: true}, strict: false, versionKey: false})
 export class CourseDto {
 
     courseId?: string
@@ -18,6 +19,10 @@ export class CourseDto {
 
     @Prop({type: String, nullable: true})
     description!: string
+
+
+    @Prop({type: [StudentDto], nullable: true})
+    students?: StudentDto[]
 }
 
  const CourseSchema = SchemaFactory.createForClass(CourseDto)

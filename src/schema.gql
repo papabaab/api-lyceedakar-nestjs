@@ -26,6 +26,7 @@ type Query {
   findOneCourse(id: String!): CourseEntity!
   findAllStudent: [StudentEntity!]!
   findOneStudent(id: String!): StudentEntity!
+  studentsInCourse(courseId: String!): [StudentEntity!]!
 }
 
 type Mutation {
@@ -38,6 +39,7 @@ type Mutation {
 }
 
 input CourseInput {
+  courseId: String
   startDate: String
   endDate: String
   courseTitle: String
@@ -46,6 +48,7 @@ input CourseInput {
 }
 
 input StudentInput {
+  studentId: String
   firstname: String
   lastname: String
   username: String

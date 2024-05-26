@@ -4,6 +4,9 @@ import { Field, InputType, } from "@nestjs/graphql";
 export class CourseInput {
 
     @Field(() => String, { nullable: true })
+    courseId?: string
+    
+    @Field(() => String, { nullable: true })
     startDate: string | Date
 
     @Field(() => String, { nullable: true })

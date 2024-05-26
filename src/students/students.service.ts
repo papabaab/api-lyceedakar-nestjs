@@ -12,7 +12,7 @@ export class StudentsService extends MongooseService<StudentDto> {
         console.log("STUDENT SERVICE: studentModel: ", this.studentModel.name)
     }
 
-    findStudentsOfCourse(courseId: string){
+    async findStudentsOfCourse(courseId: string){
         return this.studentModel.find({courseId})
     }
 }

@@ -1,15 +1,21 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { CoursesService } from './courses.service';
 import { CourseDto } from './dto/course.dto';
+import { StudentsService } from 'src/students/students.service';
 
 @Controller('')
 export class CoursesController {
 
-    constructor(private courserService: CoursesService) {}
+    constructor(private courserService: CoursesService, private studentService: StudentsService) {}
 
     @Get('')
     async getCourses() {
-        return await this.courserService.findAll()
+        const courses = await this.courserService.findAll()
+       await Promise.all(courses.map(async (course) => {
+           course.students = await this.studentService.findStudentsOfCourse(course.courseId)
+           console.log("COURSE CONTROLLER: course: ", course)
+        }))
+        return courses
     }
 
     @Get(':courseId')

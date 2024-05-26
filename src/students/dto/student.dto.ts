@@ -1,8 +1,9 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose"
 
-@Schema({collection: 'student', timestamps: true, toJSON: {virtuals: true}})
+@Schema({collection: 'student', timestamps: true, toJSON: {virtuals: true}, strict: false, versionKey: false})
 export class StudentDto {
 
+    @Prop({type: String})
     studentId?:  string
 
     @Prop({type: String,required: true})
@@ -17,10 +18,14 @@ export class StudentDto {
     @Prop({ type: String, nullable: true})
     email!: string
 
-    @Prop({type: String, required: true})
+    @Prop({type: String, nullable: false})
     courseId!: string
 }
 
 const StudentSchema = SchemaFactory.createForClass(StudentDto)
-StudentSchema.virtual('studentId').get(function(){return this._id.toHexString()})
+StudentSchema.post('find', function(docs) {
+    docs.forEach(doc => {
+        doc.studentId = doc._id.toHexString()
+    })
+})
 export {StudentSchema}
